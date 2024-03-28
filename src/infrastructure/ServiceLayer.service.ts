@@ -14,7 +14,7 @@ export class ServiceLayer {
         this.agent = new https.Agent({rejectUnauthorized: false})
     }
 
-    public setSessionId = async () => {
+    public getSessionId = async () => {
         this.sessionId = await this.slAuthService.execute()
     }
 

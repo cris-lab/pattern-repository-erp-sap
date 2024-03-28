@@ -2,11 +2,10 @@ import { ServiceLayer } from "../../infrastructure/ServiceLayer.service"
 import { Repository } from "../../domain/models/repository.interface"
 import { SLResponse } from "../../infrastructure/SLResponse.interface"
 
-export class InvoicesRepository implements Repository {
-
-    private readonly path = 'Invoices'
+export class ServiceLayerAbstractRepository implements Repository {
 
     constructor(
+        private readonly path : string,
         private readonly serviceLayer: ServiceLayer
     ){}
 
@@ -23,7 +22,11 @@ export class InvoicesRepository implements Repository {
     }
 
     save = async (resourceId:number, data: {}) : Promise<any> => {
-        return true
+        throw new Error('Method not implemented')
+    }
+
+    delete = async (resourceId:number) : Promise<boolean> => {
+        throw new Error('Method not implemented')
     }
 
 }
